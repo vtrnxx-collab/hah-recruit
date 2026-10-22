@@ -34,3 +34,7 @@ python3 -m http.server 8000
 
 - 各ページの `<meta name="robots" content="noindex, nofollow">`
 - `_headers` の `X-Robots-Tag: noindex, nofollow`(Cloudflare Pages が全ページに付けるHTTPヘッダー)
+
+## 公開(Cloudflare Workers)
+
+push すると Cloudflare が `npx wrangler deploy` で公開する。設定は `wrangler.jsonc`、公開しないファイルは `.assetsignore` に書く。見つからないURLには `404.html` を返す。
