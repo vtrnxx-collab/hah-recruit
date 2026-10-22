@@ -59,8 +59,9 @@
         <h2>申し込みフォーム</h2>
       </div>
       <div class="card">
-        <p class="todo">応募フォームをここに入れます。応募者の個人情報を扱うため、受付の仕組み(フォームのサービスと、届いた情報の保管先)を決めてから設置します。</p>
-        <p class="note">予定している項目: お名前、連絡先、臨床経験の年数、希望の院(本院 / キャットクリニック / どちらでも)、見学の希望日、ご質問</p>
+        <!-- Tally の見学・応募フォーム(formId J19W04)。届いた内容は Tally に保存され、オーナーにメールで通知される -->
+        <iframe data-tally-src="https://tally.so/embed/J19W04?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" title="獣医師の見学・応募"></iframe>
+        <p class="note">フォームが表示されない場合は <a href="https://tally.so/r/J19W04">こちら</a> から申し込めます。</p>
       </div>
       <p class="todo" style="margin-top:16px">公式LINEから申し込めるようにする場合は、LINEのリンクをここに置きます。</p>
     </div>
@@ -89,5 +90,6 @@
   </div>
 </footer>
 <script src="assets/site.js"></script>
+<script async src="https://tally.so/widgets/embed.js" onload="Tally.loadEmbeds()"></script>
 </body>
 </html>
