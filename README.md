@@ -27,3 +27,10 @@
 ```sh
 python3 -m http.server 8000
 ```
+
+## 正式公開のときに外すもの
+
+準備中のあいだは検索に出さないようにしている。正式公開のときに次の2つを外す。
+
+- 各ページの `<meta name="robots" content="noindex, nofollow">`
+- `_headers` の `X-Robots-Tag: noindex, nofollow`(Cloudflare Pages が全ページに付けるHTTPヘッダー)
