@@ -19,5 +19,8 @@ document.querySelectorAll("[role=tablist]").forEach((list) => {
   tabs.forEach((t) => t.addEventListener("click", () => select(t)));
   // jobs.html#cat のようにハッシュで院を指定できる
   const fromHash = tabs.find((t) => t.dataset.hash === location.hash.slice(1));
-  if (fromHash) select(fromHash);
+  if (fromHash) {
+    select(fromHash);
+    list.scrollIntoView();
+  }
 });
