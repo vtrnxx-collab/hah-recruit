@@ -24,3 +24,19 @@ document.querySelectorAll("[role=tablist]").forEach((list) => {
     list.scrollIntoView();
   }
 });
+
+// 最初に表示されるときだけ、ふわっと出す(動きを減らす設定の人には出さない)
+if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("is-in");
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -10% 0px" });
+  document.querySelectorAll("main > section > .wrap").forEach((el) => {
+    el.classList.add("reveal");
+    io.observe(el);
+  });
+}
